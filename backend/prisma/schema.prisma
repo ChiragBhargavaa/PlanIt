@@ -1,0 +1,27 @@
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model City {
+  id                 String   @id @default(uuid())
+  name               String
+  state              String
+  country            String
+  latitude           Float
+  longitude          Float
+  timezone           String
+  popularity         Int
+  average_time_spent Float
+  vibe               String
+
+  created_at         DateTime @default(now())
+  updated_at         DateTime @updatedAt
+
+  @@unique([name, state, country])
+}
