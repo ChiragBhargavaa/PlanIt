@@ -1,4 +1,5 @@
 
+import taj from "../assets/taj.png";
 
 export default function Login() {
   return (
@@ -12,7 +13,7 @@ export default function Login() {
           
         
           <img
-            src="/taj.png"
+            src={taj}
             alt="taj"
             className="absolute inset-0 w-full h-full object-cover"
           />
