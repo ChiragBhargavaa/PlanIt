@@ -1,9 +1,33 @@
 
+import { useState } from "react";
+import {userLogin} from "../services/api";
 import taj from "../assets/taj.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+
+
+const checkLogin = async () =>{
+  try{
+    const response = await userLogin({
+      email, password,
+    });
+
+    console.log("Succesful login!", response.data);
+    navigate("/");
+  }
+
+  catch(error){
+    console.error("Login failed!", error.response && error.response.data);
+  }
+};
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#1A000c] px-4">
+    <div className="min-h-screen -py-10 flex items-center justify-center bg-[#1A000c] px-4">
       
       
       <div className="w-full max-w-4xl bg-[#fffdf9] rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
@@ -21,7 +45,6 @@ export default function Login() {
  
           <div className="absolute inset-0 bg-black/60"></div>
 
-          {/* Text on top */}
           <div className="relative z-10 text-center text-white p-8">
             <h2 className="text-3xl font-bold mb-2">
               Welcome Back
@@ -46,15 +69,18 @@ export default function Login() {
           </div>
 
          
-          <form className="space-y-5">
+          <form className="space-y-5"
+              onSubmit={(e) => e.preventDefault()}>
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">
                 Email
               </label>
               <input
                 type="email"
+                value={email}
+                onChange={(e)=> setEmail(e.target.value)} 
                 className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-red-950"
-                placeholder="you@example.com"
+               
               />
             </div>
 
@@ -64,8 +90,10 @@ export default function Login() {
               </label>
               <input
                 type="password"
+                value={password}
+                onChange={(e)=> setPassword(e.target.value)}
                 className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-red-950"
-                placeholder="••••••••"
+               
               />
             </div>
 
@@ -77,6 +105,8 @@ export default function Login() {
 
             <button
               type="button"
+              
+              onClick={checkLogin}
               className="w-full py-3 rounded-xl font-semibold text-white bg-[#44001b] hover:bg-[#510012] transition"
             >
               Login
