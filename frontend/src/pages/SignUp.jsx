@@ -7,8 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function SignUp (){
   const navigate = useNavigate();
-
-    
 const [first_name, setFirst] = useState("");
 const [last_name, setLast] = useState("");
 const [email, setEmail] = useState("");
@@ -22,7 +20,7 @@ const checkSign = async () =>{
     });
 
     console.log("Succesful signup!", response.data);
-    navigate("/");
+    navigate("/homelogged");
   }
 
   catch(error){
@@ -30,8 +28,8 @@ const checkSign = async () =>{
   }
 };
  return (
-    <div className="min-h-screen flex items-center justify-center bg-[#1A000c] px-4">
-      <div className="w-full max-w-4xl bg-[#fffdf9] rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    <div className="min-h-screen flex items-center justify-center bg-[#f8f5ef] px-4">
+      <div className="w-full max-w-4xl bg-[#fffdf9] rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 mb-10">
 
         <div className="hidden md:flex relative items-center justify-center">
           <img

@@ -7,6 +7,8 @@ import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import About from "./pages/About";
 import Nav from "./components/Nav";
+import HomeLogged from "./pages/HomeLogged";
+
 
 const router = createBrowserRouter([
   {
@@ -15,6 +17,15 @@ const router = createBrowserRouter([
       <>
         <Nav />
         <Home />
+      </>
+    ),
+  },
+  {
+    path: "/homelogged",
+    element: (
+      <>
+        <Nav />
+        <HomeLogged />
       </>
     ),
   },

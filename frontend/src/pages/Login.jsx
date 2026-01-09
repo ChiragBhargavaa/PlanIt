@@ -27,10 +27,10 @@ const checkLogin = async () =>{
 };
 
   return (
-    <div className="min-h-screen -py-10 flex items-center justify-center bg-[#1A000c] px-4">
+    <div className="min-h-screen py-10 flex items-center justify-center bg-[#f8f5ef] px-4">
       
       
-      <div className="w-full max-w-4xl bg-[#fffdf9] rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+      <div className="w-full max-w-4xl bg-[#fffdf9] rounded-3xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2 mb-10">
 
 
         <div className="hidden md:relative md:flex items-center justify-center">
@@ -49,7 +49,7 @@ const checkLogin = async () =>{
             <h2 className="text-3xl font-bold mb-2">
               Welcome Back
             </h2>
-            <p className="text-white-100">
+            <p className="text-white">
               Travel smarter. Plan better.
             </p>
           </div>
