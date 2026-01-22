@@ -8,7 +8,7 @@ import SignUp from "./pages/SignUp";
 import About from "./pages/About";
 import Nav from "./components/Nav";
 import HomeLogged from "./pages/HomeLogged";
-
+import Map from "./pages/Map";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +53,14 @@ const router = createBrowserRouter([
       <>
         <Nav />
         <About />
+      </>
+    ),
+  },
+  {
+    path: "/map",
+    element: (
+      <>
+        <Map />
       </>
     ),
   },
