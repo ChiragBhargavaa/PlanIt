@@ -18,7 +18,6 @@ app.use(express.urlencoded({ limit: "10mb", extended: true }));
 app.use(cookieParser());
 
 
-
 app.use(
   cors({
     origin: (origin, callback) => {
@@ -34,5 +33,6 @@ app.use(
 );
 
 app.use("/api", routes);
+
 
 export default app;

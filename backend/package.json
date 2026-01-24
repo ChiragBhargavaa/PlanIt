@@ -10,8 +10,8 @@
   },
   "keywords": [],
   "prisma": {
-  "seed": "node --loader ts-node/esm prisma/seed.ts"
- },
+    "seed": "node --loader ts-node/esm prisma/seed.ts"
+  },
   "author": "",
   "license": "ISC",
   "description": "",
