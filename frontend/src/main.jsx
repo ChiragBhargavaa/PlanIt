@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Nav from "./components/Nav";
 import HomeLogged from "./pages/HomeLogged";
 import Map from "./pages/Map";
+import Profile from "./pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,15 @@ const router = createBrowserRouter([
     element: (
       <>
         <Map />
+      </>
+    ),
+  },
+  {
+    path: "/profile",
+    element: (
+      <>
+        <Nav />
+        <Profile />
       </>
     ),
   },
