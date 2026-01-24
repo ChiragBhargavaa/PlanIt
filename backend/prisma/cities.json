@@ -42,3 +42,6 @@
     {"name":"Varanasi","state":"Uttar Pradesh","country":"India","latitude":25.3176,"longitude":82.9739,"timezone":"Asia/Kolkata","popularity":9,"average_time_spent":2,"vibe":"Spiritual","created_at":null,"updated_at":null},
     {"name":"Visakhapatnam","state":"Andhra Pradesh","country":"India","latitude":17.6868,"longitude":83.2185,"timezone":"Asia/Kolkata","popularity":7,"average_time_spent":2.5,"vibe":"Coastal","created_at":null,"updated_at":null}
   ]
+
+
+  
