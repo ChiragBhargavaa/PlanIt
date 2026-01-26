@@ -14,11 +14,14 @@ datasource db {
 }
 
 model User {
-  id             String   @id @default(uuid())
-  first_name     String
-  last_name      String
-  email          String   @unique
-  hashedPassword String
+  id                        String    @id @default(uuid())
+  first_name                String
+  last_name                 String
+  email                     String    @unique
+  hashedPassword            String
+  emailVerified             Boolean   @default(false)
+  emailVerificationToken    String?
+  emailVerificationExpires  DateTime?
 }
 
 

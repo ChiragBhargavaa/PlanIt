@@ -8,11 +8,15 @@ export const loginService = async (
   password: string
 ) => {
   const user = await prisma.user.findUnique({
-    where: { email }
+    where: { email },
   });
 
   if (!user) {
     throw new Error("Invalid credentials");
+  }
+
+  if (!user.emailVerified) {
+    throw new Error("Please verify your email before logging in");
   }
 
   const isValid = await comparePassword(password, user.hashedPassword);

@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
@@ -10,69 +11,84 @@ import Nav from "./components/Nav";
 import HomeLogged from "./pages/HomeLogged";
 import Map from "./pages/Map";
 import Profile from "./pages/Profile";
+import VerifyEmail from "./pages/VerifyEmail";
+import VerifySuccess from "./pages/VerifySuccess";
 
 const router = createBrowserRouter([
   {
-    path: "/",
     element: (
-      <>
-        <Nav />
-        <Home />
-      </>
+      <AuthProvider>
+        <Outlet />
+      </AuthProvider>
     ),
-  },
-  {
-    path: "/homelogged",
-    element: (
-      <>
-        <Nav />
-        <HomeLogged />
-      </>
-    ),
-  },
-  {
-    path: "/login",
-    element: (
-      <>
-        <Nav />
-        <Login />
-      </>
-    ),
-  },
-  {
-    path: "/signup",
-    element: (
-      <>
-        <Nav />
-        <SignUp />
-      </>
-    ),
-  },
-  {
-    path: "/about",
-    element: (
-      <>
-        <Nav />
-        <About />
-      </>
-    ),
-  },
-  {
-    path: "/map",
-    element: (
-      <>
-        <Map />
-      </>
-    ),
-  },
-  {
-    path: "/profile",
-    element: (
-      <>
-        <Nav />
-        <Profile />
-      </>
-    ),
+    children: [
+      {
+        path: "/",
+        element: (
+          <>
+            <Nav />
+            <Home />
+          </>
+        ),
+      },
+      {
+        path: "/homelogged",
+        element: (
+          <>
+            <Nav />
+            <HomeLogged />
+          </>
+        ),
+      },
+      {
+        path: "/login",
+        element: (
+          <>
+            <Nav />
+            <Login />
+          </>
+        ),
+      },
+      {
+        path: "/signup",
+        element: (
+          <>
+            <Nav />
+            <SignUp />
+          </>
+        ),
+      },
+      {
+        path: "/verify-email",
+        element: <VerifyEmail />,
+      },
+      {
+        path: "/verify-success",
+        element: <VerifySuccess />,
+      },
+      {
+        path: "/about",
+        element: (
+          <>
+            <Nav />
+            <About />
+          </>
+        ),
+      },
+      {
+        path: "/map",
+        element: <Map />,
+      },
+      {
+        path: "/profile",
+        element: (
+          <>
+            <Nav />
+            <Profile />
+          </>
+        ),
+      },
+    ],
   },
 ]);
 
